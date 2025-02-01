@@ -31,17 +31,24 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <h2>Installation Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/4Bg7V9y.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Start by logging into the Azure Portal and navigating to the Virtual Machines service. Click "+ Create" and select "Azure Virtual Machine". Once it's running, navigate to Virtual Machines in Azure, select your VM, and click Connect > RDP to download the remote desktop file. Use this file to log in to your VM with the previously set credentials. Now, your VM is ready for the osTicket installation process.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/dLxPCrL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Open IIS Manager, select your server, and double-click Handler Mappings. Click Add Module Mapping, enter *.php as the request path, select FastCGI Module, and browse to the PHP executable (C:\PHP\php-cgi.exe). Click OK, then restart IIS. To verify the installation, create a file named info.php in the C:\inetpub\wwwroot directory with the following content: <?php phpinfo(); ?>. Open a web browser and navigate to http://localhost/info.php. If you see the PHP info page, PHP is successfully installed.
 </p>
 <br />
+
+<p>
+  <img src="https://i.imgur.com/VsHIy3e.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Open a web browser and navigate to http://localhost/setup. Follow the installation wizard, entering your database details (server: localhost, user: root, password: your MySQL root password, database: osticket). Create an admin account, finalize the setup, and delete the setup directory for security purposes. osTicket is now fully installed and ready for use.
+</p>
